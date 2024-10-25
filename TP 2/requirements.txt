@@ -1,0 +1,8 @@
+# python==3.11.9
+pandas==2.2.2
+numpy==2.1.0
+scikit-learn==1.5.1
+matplotlib==3.9.2
+seaborn==0.13.2
+gdown==5.2.0
+statsmodels==0.14.3
