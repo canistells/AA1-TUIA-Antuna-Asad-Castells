@@ -6,3 +6,4 @@ matplotlib==3.9.2
 seaborn==0.13.2
 gdown==5.2.0
 statsmodels==0.14.3
+imblearn==0.0
