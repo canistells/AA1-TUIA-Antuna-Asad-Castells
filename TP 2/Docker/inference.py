@@ -290,11 +290,11 @@ if len(sys.argv) < 2:
     print("Error: Se debe proporcionar la ruta del archivo to_predict.csv como argumento.")
     sys.exit(1)
     
-to_predict_path = sys.argv[1]
+to_predict_path = sys.argv[2]
 
-print(f"Procesando archivo de predicción: {to_predict_path}")
+print("Iniciando inferencia...")
 # Lectura del dataset
-X, y = lectDataset('to_predict.csv')
+X, y = lectDataset(to_predict_path)
 
 # Codificación del dataset
 X_modified = datasetCodif(X)
@@ -304,12 +304,12 @@ X_imputed = imputeDataset(X_modified)
 
 # Escalado de dataset
 X_scaled = scaleDataset(X_imputed)
-
+print("Prediciendo...")
 # Realizar predicciones
 y_pred_conv = predictions(X_scaled)
 
 # Crear dataframe de y_pred_conv
 df_predictions = pd.DataFrame({'RainTomorrow': y_pred_conv.flatten()})
-
+print("Predicciones realizadas con éxito.")
 # Guardar dataframe a archivo CSV en la carpeta output
 df_predictions.to_csv('output/predictions.csv', index=False)

@@ -1,6 +1,7 @@
 # Usar una imagen base de Python
 FROM python:3.10-slim
 
+ENV TF_CPP_MIN_LOG_LEVEL=3
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
@@ -18,6 +19,8 @@ COPY imputador_media.joblib /app/imputador_media.joblib
 COPY imputador_mediana.joblib /app/imputador_mediana.joblib
 COPY scaler.joblib /app/scaler.joblib
 COPY inference.py /app/inference.py
+
+
 
 # Establecer el punto de entrada y el comando por defecto
 ENTRYPOINT ["python", "inference.py"]
