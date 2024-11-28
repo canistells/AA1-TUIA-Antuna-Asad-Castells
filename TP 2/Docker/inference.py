@@ -112,7 +112,6 @@ def lectDataset(path: str):
   index_NaN = df[df['RainTomorrow'].isna()].index
   df.drop(index_NaN, inplace=True)
   df.reset_index(drop=True, inplace=True)
-  df.insert(0, 'index', df.index)
 
   # Dividimos el dataset en datos de entrada y de salida
   X = df.drop('RainTomorrow', axis=1)
@@ -284,8 +283,6 @@ def predictions(X_scaled: pd.DataFrame):
 
   # Convertir a 'Yes' y 'No'
   y_pred_conv = np.where(y_pred[:] < 0.5, 'No', 'Yes')
-  print(y_pred_conv.shape)
-
   
   return y_pred_conv
 
