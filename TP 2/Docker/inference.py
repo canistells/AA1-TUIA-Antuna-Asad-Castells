@@ -109,15 +109,15 @@ def lectDataset(path: str):
   df = pd.read_csv(path)
 
   # Eliminación de datos donde la variable target esté vacía
-  index_NaN = df[df['RainTomorrow'].isna()].index
-  df.drop(index_NaN, inplace=True)
-  df.reset_index(drop=True, inplace=True)
+#   index_NaN = df[df['RainTomorrow'].isna()].index
+#   df.drop(index_NaN, inplace=True)
+#   df.reset_index(drop=True, inplace=True)
 
   # Dividimos el dataset en datos de entrada y de salida
-  X = df.drop('RainTomorrow', axis=1)
-  y = df['RainTomorrow']
+  X = df#.drop('RainTomorrow', axis=1)
+  #y = df['RainTomorrow']
 
-  return X, y
+  return X
 
 def datasetCodif(X: pd.DataFrame):
   '''
@@ -294,7 +294,7 @@ to_predict_path = sys.argv[2]
 
 print("Iniciando inferencia...")
 # Lectura del dataset
-X, y = lectDataset(to_predict_path)
+X = lectDataset(to_predict_path)
 
 # Codificación del dataset
 X_modified = datasetCodif(X)
