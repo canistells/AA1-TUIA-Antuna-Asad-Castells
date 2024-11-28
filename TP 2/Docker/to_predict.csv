@@ -1,0 +1,3 @@
+Date,Location,MinTemp,MaxTemp,Rainfall,Evaporation,Sunshine,WindGustDir,WindGustSpeed,WindDir9am,WindDir3pm,WindSpeed9am,WindSpeed3pm,Humidity9am,Humidity3pm,Pressure9am,Pressure3pm,Cloud9am,Cloud3pm,Temp9am,Temp3pm,RainToday,RainTomorrow
+2008-12-14,Albury,12.6,21,3.6,NA,NA,SW,44,W,SSW,24,20,65,43,1001.2,1001.8,NA,7,15.8,19.8,Yes,No
+2008-12-15,Albury,8.4,24.6,0,NA,NA,NA,NA,S,WNW,4,30,57,32,1009.7,1008.7,NA,NA,15.9,23.5,No,NA
